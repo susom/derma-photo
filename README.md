@@ -1,2 +1,2 @@
-# ClassNameHere
-A template for a REDCap External Module
+# DermAvatarPhotoApp
+Setting up an external module to make the app more shareable
