@@ -1,2 +1,4 @@
-# DermAvatarPhotoApp
-Setting up an external module to make the app more shareable
+# Derma Avatar Photo App
+
+External Modularizing the shazam JS from original iteration
+
