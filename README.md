@@ -15,7 +15,7 @@ For this configuration example, we will be utilizing the DERM_PHOTO_BODY image
 ![DERM_PHOTO_BODY](./img/derm_photo_body.png)
 1. Add a checkbox field to your survey with these choice selections. These choices
 correspond to the 7 selectable regions in the DERM_PHOTO_BODY image map and is the
-key defined in the the HTML map files.
+key defined in the HTML map file.
 
 ```
 f01, Face
