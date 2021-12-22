@@ -34,5 +34,5 @@ r02, Back
 3. For each of those select options, create a File Upload field with the variable name that corresponds to the coded value.
 Set the Action-Tag to @HIDDEN-SURVEY
 
-For this example, there will be 7 File Upload fields named f01, f02, etc.
+For this example, there will be 7 File Upload fields named f01, f02, f03, etc.
 
