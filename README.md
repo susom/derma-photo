@@ -5,12 +5,12 @@ select existing files) and link the uploaded photo to the selected image map in 
 survey. This EM extends functionality of the ImageMap EM by linking the image part
 selection with a file upload field (rather than the checkbox field).
 
-##Prerequisites
+## Prerequisites
 
 * ImageMap EM installed and enabled in your project
 * Currently only supports a single image map in the project
 
-##Configuration
+## Configuration
 For this configuration example, we will be utilizing the DERM_PHOTO_BODY image
 ![DERM_PHOTO_BODY](./img/derm_photo_body.png)
 1. Add a checkbox field to your survey with these choice selections. These choices
