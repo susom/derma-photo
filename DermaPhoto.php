@@ -27,22 +27,7 @@ class DermaPhoto extends \ExternalModules\AbstractExternalModule {
 	}
 
     public function redcap_survey_page_top($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance) {
-        $file_upload_page   = APP_PATH_SURVEY . "index.php?pid=" . PROJECT_ID . "&__passthru=".urlencode("DataEntry/file_upload.php");
-        $file_empty_page    = APP_PATH_SURVEY . "index.php?pid=" . PROJECT_ID . "&__passthru=".urlencode("DataEntry/empty.php") . '&s=' . $_GET['s'];
-        $formAction         = $file_upload_page.'&id='.rawurlencode($_GET['id']).'&event_id='.$_GET['event_id'].'&instance='.$_GET['instance'].'&s='.$_GET['s'];
 
-        $file_upload_win2 = '<form autocomplete="new-password" id="form_file_upload" action="'.$formAction.'" method="post" enctype="multipart/form-data" target="upload_target" onsubmit="return startUpload();" >
-                                <div id="f1_upload_process"></div>
-                                <div id="f1_upload_form" style="">
-                                    <input name="myfile" type="file" size="40">
-                                    <input name="myfile_base64" type="hidden">
-                                    <input name="myfile_base64_edited" type="hidden" value="0">
-                                    <input name="myfile_replace" type="hidden" value="0">
-                                    <button class="btn btn-primaryrc btn-fileupload" onclick="uploadFilePreProcess();return false;"><i class="fas fa-upload"></i> Upload file</button>
-                                </div>
-                                <input type="hidden" id="field_name" name="field_name" value="">
-                                <iframe id="upload_target" name="upload_target" src="'.$file_empty_page.'" ></iframe>
-                            </form>';
         ?>
         <script>
             $(document).ready(function() {
@@ -96,7 +81,7 @@ class DermaPhoto extends \ExternalModules\AbstractExternalModule {
                     // Capture close event
                     $("#file_upload").on("dialogclose", function(event, ui) {
                         console.log("no dialog no close!");
-                        // FU.uploadClosed();
+                        FU.uploadClosed();
                     });
 
                     //as soon as the photo has been uploaded, click the Upload button
@@ -134,8 +119,7 @@ class DermaPhoto extends \ExternalModules\AbstractExternalModule {
 
                             // TRIGGER UPLOAD
                             //MODIFY BEHAVIOUR HERE
-                            // console.log("what is data", data);
-                            noUIfilePopUp(data.key, 0);
+                            filePopUp(data.key, 0);
 
                             // PRESS FIND FILE BUTTON AUTOMATICALLY
                             $('input[name="myfile"]').trigger('click');
@@ -153,25 +137,6 @@ class DermaPhoto extends \ExternalModules\AbstractExternalModule {
                     };
 
                 }
-
-            }
-
-            function noUIfilePopUp(field_name, signature, replace_version){
-                // filePopUp(field_name, 0);
-                minPopUpBackUp(field_name, 0);
-            }
-
-            function minPopUpBackUp(field_name, signature, replace_version) {
-                // Reset value of hidden field used to determine if signature was signed
-                $('#f1_upload_form input[name="myfile_base64_edited"]').val('0');
-                $('#f1_upload_form input[name="myfile_replace"]').val(replace_version);
-
-                var file_upload_win = '<?php echo js_escape($file_upload_win2) ?>';
-
-                document.getElementById('file_upload').innerHTML = file_upload_win;
-                document.getElementById('field_name').value = field_name+'-linknew';
-
-                $('#f1_upload_form').show();
             }
         </script>
         <?php

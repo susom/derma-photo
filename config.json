@@ -38,12 +38,7 @@
 
 	"links": {
 		"project": [
-            {
-                "name": "Derma Photo Instructions",
-                "icon": "fas fa-laptop-code",
-                "url" : "pages/derma_photo_instructions.php",
-                "show-header-and-footer": true
-            }
+
         ],
 		"control-center": [
 
