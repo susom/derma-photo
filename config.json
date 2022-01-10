@@ -3,7 +3,7 @@
 
 	"namespace": "Stanford\\DermaPhoto",
 
-	"description": "A template for a REDCap External Module",
+	"description": "Allows survey takers to take photos on their phone (or select existing files) and link the uploaded photo to the selected image map in the survey.",
 
 	"documentation": "README.md",
 
